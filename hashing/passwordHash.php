@@ -27,6 +27,11 @@
         ];
         $hashedPWD = password_hash($pwd, PASSWORD_BCRYPT, $opt);
     }
+    else{
+        echo "Code gagal. Akan diarahkan ke halaman lain dalam 2 detik...";
+        echo "<script>setTimeout(function(){ window.location.href = 'index.php'; }, 2000);</script>";
+        exit;
+    }
 
 ?>
 
