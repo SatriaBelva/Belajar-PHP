@@ -1,18 +1,14 @@
 <?php
 
-$pwd      = "Satria Belva";
-$salt     = bin2hex(random_bytes(20)); 
-$pepper   = "thisIsAPepperForMyownHashMethod";  
-$text     = $pwd.$salt.$pepper;
-$a        = hash("sha256", $text);
+$pwd         = "Satria Belva";                      // pwd merupakan variabel yang menyimpan Text yang ingin dihashing
+$salt        = bin2hex(random_bytes(20));           // Salt merupakan variabel yang menyimpan string random berukuran 20 byte
+$pepper      = "thisIsAPepperForMyownHashMethod";   // Pepper merupakan variavel yang menyimpan string tetap
+$text        = $pwd.$salt.$pepper;                  // text merupakan variabel yang mengconcat variabel pwd, salt, dan pepper
+$a           = hash("sha256", $text);               // a merupakan variabel yang menyimpan method untuk menghashing variabel text
 
-$storedSalt  = $salt;
+$storedSalt  = $salt;                               // 
 $text1       = $pwd.$storedSalt.$pepper;
 $b           = hash("sha256", $text1);
-
-// echo $a;
-// echo "<br>";
-// echo $b;
 
 ?>
 
