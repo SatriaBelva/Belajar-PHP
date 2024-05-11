@@ -18,6 +18,7 @@
     //     echo "gagal";
     // }
 
+    // Code sederhana buat ngecek apakah password yang dimasukkan dari file index.php akan sama dengan password yang telah dihashing di file ini
     $Truepwd = "12345";
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $pwd = htmlspecialchars($_POST['passwordss']);
