@@ -22,7 +22,7 @@ $b           = hash("sha256", $text1);
 <body>
     <form action="passwordHash.php" method="POST">
         <input type="text" name="passwordss" placeholder="Masukkan Password yang Sesuai...">
-        <button>Submit</button>
+        <button>Submittttttttttt</button>
     </form>
 </body>
 </html>
