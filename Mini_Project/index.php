@@ -39,6 +39,7 @@ require_once 'view/register.view.php';
             <input type="password" name="pwd" placeholder="Masukkan password ...">
             <button>Register</button>
         </form>
+        <div>nambah ini</div>
     </div>
 
     <?php
