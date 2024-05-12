@@ -40,6 +40,13 @@ require_once 'view/register.view.php';
             <button>Register</button>
         </form>
         <div>nambah ini</div>
+        <div>nambah ini</div>
+        <div>nambah ini</div>
+        <div>nambah ini</div>
+        <div>nambah ini</div>
+        <div>nambah ini</div>
+        <div>nambah ini</div>
+        <div>nambah ini</div>
     </div>
 
     <?php
