@@ -37,3 +37,8 @@ function is_email_taken(object $pdo, string $email){
         return false; // !Error apabila email belum ada
     }
 }
+
+function create_user(object $pdo, string $nama, string $email, string $username, string $pwd)
+{
+    setUser($pdo, $nama, $email, $username, $pwd);
+}

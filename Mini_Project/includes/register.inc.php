@@ -29,35 +29,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         require_once 'config_session.inc.php';
         
-        if($errors){ // Akan return True apabila terdapat data dalam array errors dan sebaliknya
+        if($errors){ 
             $_SESSION["errors_register"] = $errors;
+            
+            $data_register = [
+                "nama"     => $nama,
+                "username" => $username,
+                "email"    => $email
+            ];
+            $_SESSION["data_register"] = $data_register;
+
             header("Location: ../index.php");
+            die(); 
         }
 
+        create_user ($pdo, $nama, $email, $username, $pwd);
 
-        // $insert_query = "INSERT INTO akun_pengguna (nama, username, passwords, email) 
-        //                  VALUES (:nama, :username, :pwd, :email);"; 
-                                                                    
+        header("Location: ../index.php?Register=sukses"); 
 
-        // $stmt = $pdo->prepare($insert_query);       
-        // $stmt ->bindParam(":nama", $nama);          
-        // $stmt ->bindParam(":username", $username);            
-        // $stmt ->bindParam(":pwd", $pwd);             
-        // $stmt ->bindParam(":email", $email);           
-        // $stmt ->execute();
-
-        // $pdo  = null; 
-        // $stmt = null; 
-
-        header("Location: ../index.php"); 
-
+        $pdo  = null;
+        $stmt = null;
+        
         die(); 
     }catch (PDOException $e) {
         die("Query Failed : " . $e->getMessage());
     }
 }
 else{
-    header("Location: ../index.php"); // Apabila halaman ini tidak diakses menggunakan method "POST" maka akan diarahkan kembali ke file index.php
+    header("Location: ../index.php"); 
 }
-
-// Menggunakan Named Parameter (Recommended)

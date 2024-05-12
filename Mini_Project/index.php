@@ -33,20 +33,10 @@ require_once 'view/register.view.php';
     
         <form action="includes/register.inc.php" method="POST">
             <h1 style="font-family: poppins">Register</h1>
-            <input type="text"     name="nama" placeholder="Masukkan Nama ...">
-            <input type="text"     name="email" placeholder="Masukkan email  ...">
-            <input type="text"     name="username" placeholder="Masukkan username ...">
-            <input type="password" name="pwd" placeholder="Masukkan password ...">
+            <?php register_input();
+            ?>
             <button>Register</button>
         </form>
-        <div>nambah ini</div>
-        <div>nambah ini</div>
-        <div>nambah ini</div>
-        <div>nambah ini</div>
-        <div>nambah ini</div>
-        <div>nambah ini</div>
-        <div>nambah ini</div>
-        <div>nambah ini</div>
     </div>
 
     <?php
