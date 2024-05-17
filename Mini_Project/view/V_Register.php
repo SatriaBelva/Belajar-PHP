@@ -29,6 +29,7 @@ function register_input()
         echo '<input type="text"     name="nama"     placeholder="Masukkan Nama ...">';
     }
 
+
     if(isset($_SESSION["data_register"]["username"]) && !isset($_SESSION["errors_register"]["Username telah digunakan"]))
     {
         echo '<input type="text"     name="username"     placeholder="Masukkan username ..." value="'. $_SESSION["data_register"]["username"].'">';
@@ -38,6 +39,7 @@ function register_input()
         echo '<input type="text"     name="username"     placeholder="Masukkan username ...">';
     }
 
+
     if(isset($_SESSION["data_register"]["email"]) && !isset($_SESSION["errors_register"]["Email Telah Digunakan"]) && !isset($_SESSION["errors_register"]["Email tidak Valid!"]))
     {
         echo '<input type="text"     name="email"     placeholder="Masukkan email ..." value="'.$_SESSION["data_register"]["email"].'">';
@@ -46,6 +48,8 @@ function register_input()
     {
         echo '<input type="text"     name="email"     placeholder="Masukkan email ...">';
     }
+
+    
     echo '<input type="password" name="pwd"      placeholder="Masukkan password ...">';
 }
 

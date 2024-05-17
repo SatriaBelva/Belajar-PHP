@@ -7,9 +7,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email    = $_POST["email"];     
 
     try {
-        require_once "dbh.inc.php";
-        require_once "../model/register.model.php";
-        require_once "../controller/register.contr.php";
+        require_once "tes/dbh.inc.php";
+        require_once "../model/M_Register.php";
+        require_once "../controller/C_Register.php";
         
         // Error Handling
         $errors = [];
@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $errors["email_taken"]    = "Email Telah Digunakan";
         }
         
-        require_once 'config_session.inc.php';
+        require_once 'tes/config_session.inc.php';
         
         if($errors){ 
             $_SESSION["errors_register"] = $errors;
@@ -57,4 +57,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 else{
     header("Location: ../index.php"); 
+    die();
 }

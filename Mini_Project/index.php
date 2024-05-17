@@ -1,6 +1,7 @@
 <?php
-require_once 'includes/config_session.inc.php';
-require_once 'view/register.view.php';
+require_once 'includes/tes/config_session.inc.php';
+require_once 'view/V_Register.php';
+require_once 'view/V_Login.php';
 ?>
 
 <!DOCTYPE html>
@@ -23,12 +24,16 @@ require_once 'view/register.view.php';
                 flex-direction : column;
                 justify-content: center;
                 align-items: flex-start;">
-        <form action="" method="POST">
+        <form action="includes/login.inc.php" method="POST">
             <h1 style="font-family: poppins">Login</h1>
             <input type="text" name="username" placeholder="Masukkan username ...">
-            <input type="password" name="password" placeholder="Masukkan password ...">
+            <input type="password" name="pwd" placeholder="Masukkan password ...">
             <button>Login</button>
         </form>
+
+        <?php
+            check_login_errors();
+        ?>
     
     
         <form action="includes/register.inc.php" method="POST">
