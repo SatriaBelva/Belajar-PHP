@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($errors){ 
             $_SESSION["errors_login"] = $errors;
 
-            header("Location: ../index.php");
+            header("Location: ../resource/login-register/login/login.php");
             die(); 
         }
 
@@ -44,13 +44,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $_SESSION["username"] = htmlspecialchars($result["username"]);
         $_SESSION['last_regeneration'] = time();
 
-        header("Location: ../index.php?login=success"); 
+        header("Location: ../resource/login-register/login/login.php?login=success"); 
         die();
     } catch (PDOException $e) {
         die("Query Failed : " . $e->getMessage());
     }
 }
 else{
-    header("Location: ../index.php"); 
+    header("Location: ../resource/login-register/login/login.php"); 
     die();
 }

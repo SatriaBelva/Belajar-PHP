@@ -29,9 +29,9 @@ function getEmail(object $pdo, string $email)
     return $result;
 }
 
-function setUser(object $pdo, string $nama, string $email, string $username, string $pwd)
+function setUser(object $pdo, string $nama, string $email, string $username, string $pwd, string $no_hp)
 {
-    $query = "INSERT INTO akun (nama, email, username, pwd) VALUES (:nama, :email, :username, :pwd);";
+    $query = "INSERT INTO akun (nama, email, username, pwd, No_HP) VALUES (:nama, :email, :username, :pwd, :No_HP);";
     $stmt  = $pdo->prepare($query) ;
 
     $opt = [
@@ -42,6 +42,7 @@ function setUser(object $pdo, string $nama, string $email, string $username, str
     $stmt->bindParam(":email", $email);
     $stmt->bindParam(":pwd", $hashedPWD);
     $stmt->bindParam(":nama", $nama);
+    $stmt->bindParam(":No_HP", $no_hp);
 
 
     $stmt->execute();

@@ -5,6 +5,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $username = $_POST["username"];  
     $pwd      = $_POST["pwd"];       
     $email    = $_POST["email"];     
+    $no_hp    = $_POST["no_hp"];     
 
     try {
         require_once "tes/dbh.inc.php";
@@ -39,13 +40,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             ];
             $_SESSION["data_register"] = $data_register;
 
-            header("Location: ../index.php");
+            header("Location: ../resource/login-register/register/register.php");
             die(); 
         }
 
-        create_user ($pdo, $nama, $email, $username, $pwd);
+        create_user ($pdo, $nama, $email, $username, $pwd, $no_hp);
 
-        header("Location: ../index.php?Register=sukses"); 
+        header("Location: ../resource/login-register/login/login.php?Register=sukses"); 
 
         $pdo  = null;
         $stmt = null;

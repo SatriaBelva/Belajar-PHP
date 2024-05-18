@@ -22,34 +22,36 @@ function register_input()
 {
     if(isset($_SESSION["data_register"]["nama"]))
     {
-        echo '<input type="text"     name="nama"     placeholder="Masukkan Nama ..." value="'.$_SESSION["data_register"]["nama"].'">';
+        echo '<label for="nama">Nama:</label> <input type="text" id="nama" name="nama" placeholder="Masukkan Nama ..." value="'.$_SESSION["data_register"]["nama"].'">';
     }
     else
     {
-        echo '<input type="text"     name="nama"     placeholder="Masukkan Nama ...">';
+        echo '<label for="nama">Nama:</label> <input type="text" id="nama" name="nama" placeholder="Masukkan Nama ...">';
     }
 
 
     if(isset($_SESSION["data_register"]["username"]) && !isset($_SESSION["errors_register"]["Username telah digunakan"]))
     {
-        echo '<input type="text"     name="username"     placeholder="Masukkan username ..." value="'. $_SESSION["data_register"]["username"].'">';
+        echo '<label for="username">Username:</label> <input type="text" name="username" placeholder="Masukkan username ..." value="'. $_SESSION["data_register"]["username"].'">';
     }
     else
     {
-        echo '<input type="text"     name="username"     placeholder="Masukkan username ...">';
+        echo '<label for="username">Username:</label> <input type="text" name="username" placeholder="Masukkan username ...">';
     }
 
 
     if(isset($_SESSION["data_register"]["email"]) && !isset($_SESSION["errors_register"]["Email Telah Digunakan"]) && !isset($_SESSION["errors_register"]["Email tidak Valid!"]))
     {
-        echo '<input type="text"     name="email"     placeholder="Masukkan email ..." value="'.$_SESSION["data_register"]["email"].'">';
+        echo '<label for="email">email:</label> <input type="text"     name="email"     placeholder="Masukkan email ..." value="'.$_SESSION["data_register"]["email"].'">';
     }
     else
     {
-        echo '<input type="text"     name="email"     placeholder="Masukkan email ...">';
+        echo '<label for="email">email:</label> <input type="text"     name="email"     placeholder="Masukkan email ...">';
     }
 
     
-    echo '<input type="password" name="pwd"      placeholder="Masukkan password ...">';
+    echo '<label for="no_hp">No Handphone:</label> <input type="no_hp" id="no_hp" name="no_hp" placeholder="Masukkan Nomor HP ..." required>';
+    echo '<label for="pwd">Password:</label> <input type="password" name="pwd" placeholder="Masukkan password ...">';
+    echo '<label for="konfirmasi_pass">Konfirmasi Password:</label> <input type="konfirmasi_pass" id="konfirmasi_pass" name="konfirmasi_pass" placeholder="Konfirmasi Password" required>';
 }
 

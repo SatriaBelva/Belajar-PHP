@@ -38,8 +38,7 @@ require_once 'view/V_Login.php';
     
         <form action="includes/register.inc.php" method="POST">
             <h1 style="font-family: poppins">Register</h1>
-            <?php register_input();
-            ?>
+            <?php register_input();?>
             <button>Register</button>
         </form>
     </div>
